@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0b1020" />
+    <meta name="description" content="VIDA OS 6.0 — Sistema de Evolução pessoal com progresso, foco e consistência." />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./assets/icons/icon-192.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>VIDA OS 6.0 – Sistema de Evolução</title>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="top-bar glass">
+        <div>
+          <p class="overline">VIDA OS 6.0</p>
+          <h1>Sistema de Evolução</h1>
+        </div>
+        <button id="focusToggle" class="btn ghost" aria-pressed="false">Modo Foco: Off</button>
+      </header>
+
+      <main>
+        <section class="dashboard grid">
+          <article class="panel progress-dominant">
+            <div class="panel-head">
+              <h2>Progresso Hoje</h2>
+              <span id="dailyProgressLabel">0%</span>
+            </div>
+            <div class="progress-track" aria-label="Progresso do dia">
+              <div id="dailyProgressBar" class="progress-fill"></div>
+            </div>
+            <small id="integrityLabel">Integridade 100</small>
+          </article>
+
+          <article class="panel mini-stats">
+            <div><p>XP</p><strong id="xpLabel">0</strong></div>
+            <div><p>Nível</p><strong id="levelLabel">1</strong></div>
+            <div><p>Streak</p><strong id="streakLabel">0🔥</strong></div>
+          </article>
+
+          <article class="panel mission">
+            <h2>Missão Principal</h2>
+            <p id="missionTitle">Sincronizando missão...</p>
+            <button id="continueBtn" class="btn primary">Continuar Evolução</button>
+          </article>
+
+          <article class="panel rank-card">
+            <h3>Rank Atual</h3>
+            <p id="rankLabel">Recruta</p>
+            <div class="progress-track slim">
+              <div id="xpProgressBar" class="progress-fill"></div>
+            </div>
+          </article>
+        </section>
+
+        <section class="tabs glass" role="tablist" aria-label="Módulos">
+          <button class="tab active" data-tab="diet">Dieta</button>
+          <button class="tab" data-tab="training">Treino</button>
+          <button class="tab" data-tab="study">Estudo</button>
+          <button class="tab" data-tab="reading">Bíblia</button>
+        </section>
+
+        <section id="diet" class="module panel tab-panel active">
+          <h2>Dieta Inteligente</h2>
+          <div class="card-row" id="dietChoices"></div>
+          <label for="portionRange">Multiplicador de porção: <span id="portionValue">1.0x</span></label>
+          <input id="portionRange" type="range" min="0.5" max="2" step="0.1" value="1" />
+          <div class="macro-grid">
+            <div>
+              <p>Proteína</p>
+              <div class="progress-track slim"><div id="proteinBar" class="progress-fill"></div></div>
+            </div>
+            <div>
+              <p>Carbo</p>
+              <div class="progress-track slim"><div id="carbBar" class="progress-fill"></div></div>
+            </div>
+            <div>
+              <p>Gordura</p>
+              <div class="progress-track slim"><div id="fatBar" class="progress-fill"></div></div>
+            </div>
+          </div>
+          <p id="adherenceLabel">Aderência alimentar: 100%</p>
+        </section>
+
+        <section id="training" class="module panel tab-panel">
+          <h2>Treino</h2>
+          <div id="exerciseList" class="exercise-list"></div>
+          <p id="weeklyPerformance">Performance semanal: 0 sessões</p>
+        </section>
+
+        <section id="study" class="module panel tab-panel">
+          <h2>Estudo</h2>
+          <div class="timer-wrap">
+            <svg viewBox="0 0 120 120" class="timer-circle" aria-hidden="true">
+              <circle cx="60" cy="60" r="52" class="timer-bg"></circle>
+              <circle cx="60" cy="60" r="52" class="timer-progress" id="timerProgress"></circle>
+            </svg>
+            <strong id="timerLabel">25:00</strong>
+          </div>
+          <div class="actions">
+            <button id="startStudy" class="btn primary">Iniciar Foco</button>
+            <button id="abandonStudy" class="btn danger">Abandonar</button>
+          </div>
+        </section>
+
+        <section id="reading" class="module panel tab-panel">
+          <h2>Bíblia / Leitura</h2>
+          <p>Plano atual: <span id="readingPlanLabel">Evangelhos em 90 dias</span></p>
+          <div class="progress-track">
+            <div id="readingBar" class="progress-fill"></div>
+          </div>
+          <button id="logReading" class="btn primary">Registrar leitura de hoje</button>
+          <p id="consistencyLabel">Constância: 0 dias</p>
+        </section>
+
+        <section class="panel milestones">
+          <h2>Marcos</h2>
+          <ul id="milestoneList"></ul>
+        </section>
+      </main>
+
+      <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    </div>
+
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>
