@@ -1,0 +1,25 @@
+{
+  "name": "VIDA OS 6.0 – Sistema de Evolução",
+  "short_name": "VIDA OS 6.0",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#070b16",
+  "theme_color": "#0b1020",
+  "lang": "pt-BR",
+  "description": "Sistema de evolução pessoal com gamificação e foco.",
+  "icons": [
+    {
+      "src": "./assets/icons/icon-192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./assets/icons/icon-512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
